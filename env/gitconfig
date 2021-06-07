@@ -1,6 +1,6 @@
 [user]
-	name = Mark Small
-	email = mark.small@astrosat.space
+	name = Rory MacGregor 
+	email = rorymacgregor@astrosat.net
 
 [color]
         diff = auto
@@ -9,7 +9,7 @@
 	interactive = auto
         
 [core]
-	excludesfile = /home/msmall/.gitignore
+	excludesfile = /home/rory.macgregor/.gitignore
 	autocrlf = input
 	editor = emacs
 [alias]
