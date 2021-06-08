@@ -1,68 +1,25 @@
-Host homer
-  Port 1973
-  Hostname 217.155.193.113
-  User msmall
-
 # Astrosat
-Host jenkins
-  Hostname ci-server-01.common.ew1.aws.internal.astrosat.space
-  User     mark.small
-
-Host ansible
-  Hostname ansible-awx-01.common.ew1.aws.internal.astrosat.space
-  User     mark.small
-
-Host metrics
-  Hostname metrics-01.common.ew1.aws.internal.astrosat.space
-  User     mark.small
-
-Host rapid-testing
-  Hostname 172.16.1.108
-  User     ubuntu
-  IdentityFile /home/msmall/downloads/secrets/aws_private_keys/common-default.pem
-
-Host rapid-staging
-  Hostname 172.16.41.150
-  User     ubuntu
-  IdentityFile /home/msmall/downloads/secrets/aws_private_keys/rapid-staging.pem
-
-Host rapid-production
-  Hostname 172.16.41.150
-  User     ubuntu
-  IdentityFile /home/msmall/downloads/secrets/aws_private_keys/rapid-production.pem
-
-Host thermcert-testing
-  Hostname 172.16.1.108
-  User     ubuntu
-  IdentityFile /home/msmall/downloads/secrets/aws_private_keys/common-default.pem
-
-Host thermcert-staging
-  Hostname 172.16.56.16
-  User     ubuntu
-  IdentityFile /home/msmall/downloads/secrets/aws_private_keys/thermcert-staging.pem
-
-Host thermcert-production
-  Hostname 172.16.56.16
-  User     ubuntu
-  SendEnv SSH_USER
-  IdentityFile /home/msmall/downloads/secrets/aws_private_keys/thermcert-production.pem
-
-Host fmap-testing
-  Hostname 172.16.1.108
-  User     ubuntu
-  IdentityFile /home/msmall/downloads/secrets/aws_private_keys/common-default.pem
-
-Host fmap-staging
-  Hostname 172.16.25.27
-  User     ubuntu
-  IdentityFile /home/msmall/downloads/secrets/aws_private_keys/fmap-staging.pem
-
-Host fmap-production
-  Hostname 172.16.25.27
-  User     ubuntu
-  IdentityFile /home/msmall/downloads/secrets/aws_private_keys/fmap-production.pem
-Host testing
-  Hostname ds-manager-01.common.ew1.aws.internal.astrosat.space
-  User     ubuntu
-  IdentityFile /home/msmall/downloads/secrets/aws_private_keys/common-default.pem
-
+Host office
+  Hostname office.astrosat.space
+  User rory.macgregor
+  
+Host data1
+    Hostname 192.168.100.23
+    User rory.macgregor
+    ProxyJump office
+Host data2
+    Hostname 192.168.100.24
+    User rory.macgregor
+    ProxyJump office
+Host discovery
+    Hostname 192.168.100.28
+    User rory.macgregor
+    ProxyJump office
+Host rusty1
+  HostName 192.168.100.41
+    User rory.macgregor
+    ProxyJump office
+Host rusty2
+  HostName 192.168.100.42
+    User rory.macgregor
+    ProxyJump office
