@@ -64,6 +64,7 @@ ln -s $HOME/.environment/env/m2 $HOME/.m2
 ln -s $HOME/.environment/env/tmux.conf $HOME/.tmux.conf
 ln -s $HOME/.environment/env/ackrc $HOME/.ackrc
 ln -s $HOME/.environment/env/config $HOME/.ssh/config
+ln -s $HOME/.environment/env/shell_aliases $HOME/.shell_aliases
 
 # Setup pathogen for vim.
 mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
