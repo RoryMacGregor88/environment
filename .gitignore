@@ -5,3 +5,4 @@ bundle/
 .vim
 repository/
 elpa
+shell_secrets
