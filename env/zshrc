@@ -29,7 +29,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(colorize colored-man-pages chucknorris django docker docker-compose git git-extras gnu-utils history-substring-search kubectl node npm python tmux yarn z)
+plugins=(colorize colored-man-pages chucknorris docker docker-compose git git-extras gnu-utils history-substring-search kubectl node npm pipenv python tmux yarn z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -38,15 +38,11 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 setopt SHARE_HISTORY
 
-# Better bindings for up/down keys to search history
-#bindkey '^[[A' history-beginning-search-backward
-#bindkey '^[[B' history-beginning-search-forward
-
 # Environment Variables.
 export NODENV_HOME="$HOME/.nodenv"
-export PYENV_HOME="$HOME/.pyenv"
+export PYENV_ROOT="$HOME/.pyenv"
 
-export PATH=/usr/local/bin:$PYENV_HOME/bin:$NODENV_HOME/bin:$HOME/bin:$HOME/local/bin:$HOME/.local/bin:/home/linuxbrew/.linuxbrew/bin:/usr/sbin:/root/bin:/usr/local/bin:/bin:/usr/bin:/usr/games:/sbin
+export PATH=/usr/local/bin:$PYENV_ROOT/bin:$NODENV_HOME/bin:$HOME/bin:/usr/sbin:/root/bin:/bin:/usr/bin:/usr/games:/sbin
 
 export EDITOR=vim
 export PAGER=less
@@ -62,19 +58,11 @@ export TERM=xterm-256color
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 
-#export MAVEN_OPTS="-Djava.security.auth.login.config=doesnotexist"
-
 # Prevent deprecation warning message.
 unset GREP_OPTIONS
 
 # Nodenv
 eval "$(nodenv init -)"
-
-# Correct previous console commands.
-#eval $(thefuck --alias)
-
-export GITHUB_TOKEN=ef499278994f17b8ff3fc237c8e9cdcaecfb1f23
-export GITHUB_REGISTRY_TOKEN=40d1378aa39ae00b9bcee1ab9fdc4f582621a1d0
 
 export HOSTNAME=http://localhost:3000/
 export SSH_USER=$USER
@@ -88,3 +76,13 @@ eval "$(pyenv virtualenv-init -)"
 export PIPENV_VENV_IN_PROJECT=1
 
 source ~/.shell_aliases
+source ~/.shell_secrets
+
+
+function dsh() {
+  docker exec -it "$1" /bin/bash
+}
+
+function dex() {
+  docker save -o "$1".tar "$1"
+}
